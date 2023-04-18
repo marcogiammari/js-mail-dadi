@@ -1,7 +1,7 @@
 // creo una lista di email usando un for loop
 
 emails = [];
-names = ["mariorossi", "carloverdi", "sofianeri", "pierogialli", "annarosa", "mariaviola"]
+names = ["mariorosso", "carloverde", "sofianero", "pierogiallo", "annarosa", "mariaviola"]
 for (let i = 0; i < names.length; i++) {
     let name = names[i];
     name += "@email.it"
@@ -17,7 +17,7 @@ checkButton.addEventListener("click", checkEmail);
 
 function checkEmail() {
     // creo variabili input utente e risultato della ricerca
-    let toCheck = prompt("Inserisci email: ")
+    let toCheck = document.querySelector(".email").value;
     let login = false;
     // scorro l'array e salvo il risultato in login
     for (let i = 0; i < emails.length; i++) {
@@ -26,10 +26,14 @@ function checkEmail() {
         }
     }
     // restituisco il risultato all'utente
+    let p = document.getElementById("result");
+    p.classList.remove("d-none");
     if (login) {
-        alert("Login effettuato");
+        p.innerText = ("Login effettuato");
+        p.style.backgroundColor = "teal";
     }
     else {
-        alert("Login non riuscito");
+        p.innerText = ("Login non riuscito");
+        p.style.backgroundColor = "crimson";
     }
 }
