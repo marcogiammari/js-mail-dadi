@@ -17,7 +17,7 @@ checkButton.addEventListener("click", checkEmail);
 
 function checkEmail() {
     // creo variabili input utente e risultato della ricerca
-    let toCheck = document.querySelector(".email").value;
+    let toCheck = document.querySelector("#check-email").value;
     let login = false;
     // scorro l'array e salvo il risultato in login
     for (let i = 0; i < emails.length; i++) {
@@ -35,5 +35,30 @@ function checkEmail() {
     else {
         p.innerText = ("Login non riuscito");
         p.style.backgroundColor = "crimson";
+    }
+}
+
+checkButton = document.getElementById("signEmailBtn");
+checkButton.addEventListener("click", signEmail);
+
+function signEmail() {
+    let toSign = document.getElementById("sign-email").value;
+    let signIn = true;
+    for (let i = 0; i < emails.length; i++) {
+        if (toSign == emails[i]) {
+            signIn = false;
+        }
+    }
+
+    let signP = document.getElementById("signResult");
+    signP.classList.remove("d-none");
+    if (signIn) {
+        emails.push(toSign);
+        signP.innerText = "Iscrizione effettuata";
+        signP.style.backgroundColor = "teal";
+    }
+    else {
+        signP.innerText = "Iscrizione non riuscita";
+        signP.style.backgroundColor = "crimson";
     }
 }
