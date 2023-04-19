@@ -1,7 +1,7 @@
 // creo una lista di email usando un for loop
 
-emails = [];
-names = ["mariorosso", "carloverde", "sofianero", "pierogiallo", "annarosa", "mariaviola"]
+const emails = [];
+const names = ["mariorosso", "carloverde", "sofianero", "pierogiallo", "annarosa", "mariaviola"]
 for (let i = 0; i < names.length; i++) {
     let name = names[i];
     name += "@email.it"
@@ -10,7 +10,7 @@ for (let i = 0; i < names.length; i++) {
 
 // associo la funzione checkEmail al bottone
 
-checkButton = document.getElementById("checkEmailBtn");
+let checkButton = document.getElementById("checkEmailBtn");
 checkButton.addEventListener("click", checkEmail);
 
 // definisco la funzione
@@ -38,8 +38,8 @@ function checkEmail() {
     }
 }
 
-checkButton = document.getElementById("signEmailBtn");
-checkButton.addEventListener("click", signEmail);
+let signButton = document.getElementById("signEmailBtn");
+signButton.addEventListener("click", signEmail);
 
 function signEmail() {
     let toSign = document.getElementById("sign-email").value;
